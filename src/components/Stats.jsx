@@ -1,5 +1,11 @@
 import React from "react";
-import { motion, useInView, useMotionValue, useTransform } from "framer-motion";
+import {
+  motion,
+  useInView,
+  useMotionValue,
+  useTransform,
+  animate
+} from "framer-motion";
 
 const stats = [
   { label: "Campaigns", value: 32 },
@@ -17,7 +23,7 @@ const AnimatedNumber = ({ target }) => {
 
   React.useEffect(() => {
     if (inView) {
-      const controls = motionValue.animate(target, {
+      const controls = animate(motionValue, target, {
         duration: 1.4,
         ease: [0.21, 0.79, 0.26, 0.99]
       });
