@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  @apply bg-rich-black text-white font-sans;
+}
+
+::selection {
+  background-color: rgba(212, 175, 55, 0.35);
+  color: #ffffff;
+}
+
+.lux-container {
+  @apply mx-auto px-4 sm:px-6 lg:px-10 max-w-6xl;
+}
+
+.nav-blur {
+  backdrop-filter: blur(18px);
+}
+
+.masonry-column {
+  column-gap: 1.25rem;
+}
+
+.masonry-item {
+  break-inside: avoid;
+}
+
+.gold-gradient-border {
+  position: relative;
+}
+
+.gold-gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.8), transparent);
+  opacity: 0.65;
+  z-index: -1;
+}
+
+.gold-underline {
+  background-image: linear-gradient(
+    to right,
+    rgba(212, 175, 55, 0.85),
+    transparent
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  background-position: 0 100%;
+}
+
+.hero-parallax-bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
